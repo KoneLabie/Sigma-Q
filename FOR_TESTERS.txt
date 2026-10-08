@@ -1,0 +1,13 @@
+SigmaQ - install in 3 steps
+
+1. Double-click SigmaQ-Setup-0.1.0.exe
+2. If Windows says "Windows protected your PC":
+      click "More info"  ->  click "Run anyway"
+   (This appears because the installer isn't paid-for/signed. It is safe.)
+3. Click "Yes" on the admin prompt, then "Next" / "Finish".
+
+Open Ableton Live or FL Studio and search for "Sigma Q".
+- Ableton: if it's missing, Preferences > Plug-ins > enable "Use VST3 Plug-in System Folders" > Rescan.
+- FL Studio: Options > Manage plugins > Find installed plugins.
+
+To uninstall: Windows Settings > Apps > SigmaQ.
