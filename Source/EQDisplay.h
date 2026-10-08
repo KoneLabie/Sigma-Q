@@ -286,7 +286,7 @@ private:
             if (isOn (b)) continue;
             setP (pid (b, "type"), 0.0f);
             setP (pid (b, "freq"), (float) juce::jlimit (20.0, 20000.0, xToFreq (pos.x)));
-            setP (pid (b, "gain"), (float) juce::jlimit (-rangeDb(), rangeDb(), yToDb (pos.y)));
+            setP (pid (b, "gain"), (float) juce::jlimit ((double) -rangeDb(), (double) rangeDb(), yToDb (pos.y)));
             setP (pid (b, "q"), 1.0f);
             setP (pid (b, "slope"), 1.0f);
             setP (pid (b, "place"), 0.0f);
@@ -603,7 +603,9 @@ private:
                 juce::String t = f >= 1000.0 ? juce::String (f / 1000.0, 2) + " kHz" : juce::String ((int) std::round (f)) + " Hz";
                 if (dsp_eq::gainActive ((int) proc.bp[(size_t) b].type->load()))
                     t += "   " + juce::String (effGain (b), 1) + " dB";
-                const int w = (int) Theme::font (12.0f, true).getStringWidthFloat (t) + 18;
+                juce::GlyphArrangement ga;
+                ga.addLineOfText (Theme::font (12.0f, true), t, 0.0f, 0.0f);
+                const int w = (int) ga.getBoundingBox (0, -1, true).getWidth() + 18;
                 juce::Rectangle<float> tag (p.x - (float) w * 0.5f, p.y - r - 32.0f, (float) w, 22.0f);
                 tag = tag.constrainedWithin (getLocalBounds().toFloat().reduced (4.0f));
                 g.setColour (Theme::panel);
