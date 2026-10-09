@@ -1,0 +1,850 @@
+Random seed: 0x411ada7
+Validation started
+	8 Oct 2026 8:14:30pm
+
+Strictness level: 5
+-----------------------------------------------------------------
+Starting tests in: pluginval / Scan for plugins located in: <build>\SigmaQ_artefacts\Release\VST3\Sigma Q.vst3...
+Num plugins found: 1
+
+Testing plugin: VST3-Sigma Q-74576650-762d4b2e
+Kone Labie: Sigma Q v0.1.0
+Completed tests in pluginval / Scan for plugins located in: <build>\SigmaQ_artefacts\Release\VST3\Sigma Q.vst3
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (cold)...
+
+Time taken to open plugin (cold): 195 ms
+Completed tests in pluginval / Open plugin (cold)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (warm)...
+
+Time taken to open plugin (warm): 7 ms
+Running tests 1 times
+Completed tests in pluginval / Open plugin (warm)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin info...
+
+Plugin name: Sigma Q
+Alternative names: Sigma Q
+SupportsDoublePrecision: no
+Reported latency: 0
+Reported taillength: 0
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Plugin info
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin programs...
+Num programs: 0
+All program names checked
+
+Time taken to run test: 0
+Completed tests in pluginval / Plugin programs
+-----------------------------------------------------------------
+Starting tests in: pluginval / Audio processing...
+Testing with sample rate [44100] and block size [16]
+Testing with sample rate [44100] and block size [32]
+Testing with sample rate [44100] and block size [64]
+Testing with sample rate [44100] and block size [128]
+Testing with sample rate [44100] and block size [512]
+Testing with sample rate [44100] and block size [1024]
+Testing with sample rate [48000] and block size [16]
+Testing with sample rate [48000] and block size [32]
+Testing with sample rate [48000] and block size [64]
+Testing with sample rate [48000] and block size [128]
+Testing with sample rate [48000] and block size [512]
+Testing with sample rate [48000] and block size [1024]
+Testing with sample rate [96000] and block size [16]
+Testing with sample rate [96000] and block size [32]
+Testing with sample rate [96000] and block size [64]
+Testing with sample rate [96000] and block size [128]
+Testing with sample rate [96000] and block size [512]
+Testing with sample rate [96000] and block size [1024]
+
+Time taken to run test: 13 ms
+Completed tests in pluginval / Audio processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin state...
+
+Time taken to run test: 3 ms
+Completed tests in pluginval / Plugin state
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automation...
+Testing with sample rate [44100] and block size [16] and sub-block size [32]
+Testing with sample rate [44100] and block size [32] and sub-block size [32]
+Testing with sample rate [44100] and block size [64] and sub-block size [32]
+Testing with sample rate [44100] and block size [128] and sub-block size [32]
+Testing with sample rate [44100] and block size [512] and sub-block size [32]
+Testing with sample rate [44100] and block size [1024] and sub-block size [32]
+Testing with sample rate [48000] and block size [16] and sub-block size [32]
+Testing with sample rate [48000] and block size [32] and sub-block size [32]
+Testing with sample rate [48000] and block size [64] and sub-block size [32]
+Testing with sample rate [48000] and block size [128] and sub-block size [32]
+Testing with sample rate [48000] and block size [512] and sub-block size [32]
+Testing with sample rate [48000] and block size [1024] and sub-block size [32]
+Testing with sample rate [96000] and block size [16] and sub-block size [32]
+Testing with sample rate [96000] and block size [32] and sub-block size [32]
+Testing with sample rate [96000] and block size [64] and sub-block size [32]
+Testing with sample rate [96000] and block size [128] and sub-block size [32]
+Testing with sample rate [96000] and block size [512] and sub-block size [32]
+Testing with sample rate [96000] and block size [1024] and sub-block size [32]
+
+Time taken to run test: 13 ms
+Completed tests in pluginval / Automation
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automatable Parameters...
+
+Testing parameter: 0 - Band 1 On
+Parameter info: index - 0, paramName - Band 1 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 1 - Band 1 Type
+Parameter info: index - 1, paramName - Band 1 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 2 - Band 1 Frequency
+Parameter info: index - 2, paramName - Band 1 Frequency, defaultValue - 0.239659, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 3 - Band 1 Gain
+Parameter info: index - 3, paramName - Band 1 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 4 - Band 1 Q
+Parameter info: index - 4, paramName - Band 1 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 5 - Band 1 Slope
+Parameter info: index - 5, paramName - Band 1 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 6 - Band 1 Stereo Placement
+Parameter info: index - 6, paramName - Band 1 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 7 - Band 1 Motion Mode
+Parameter info: index - 7, paramName - Band 1 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 8 - Band 1 Motion Shape
+Parameter info: index - 8, paramName - Band 1 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 9 - Band 1 Motion Rate
+Parameter info: index - 9, paramName - Band 1 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 10 - Band 1 Motion Sync
+Parameter info: index - 10, paramName - Band 1 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 11 - Band 1 Motion Division
+Parameter info: index - 11, paramName - Band 1 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 12 - Band 1 Motion Sweep
+Parameter info: index - 12, paramName - Band 1 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 13 - Band 1 Motion Swell
+Parameter info: index - 13, paramName - Band 1 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 14 - Band 2 On
+Parameter info: index - 14, paramName - Band 2 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 15 - Band 2 Type
+Parameter info: index - 15, paramName - Band 2 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 16 - Band 2 Frequency
+Parameter info: index - 16, paramName - Band 2 Frequency, defaultValue - 0.295858, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 17 - Band 2 Gain
+Parameter info: index - 17, paramName - Band 2 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 18 - Band 2 Q
+Parameter info: index - 18, paramName - Band 2 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 19 - Band 2 Slope
+Parameter info: index - 19, paramName - Band 2 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 20 - Band 2 Stereo Placement
+Parameter info: index - 20, paramName - Band 2 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 21 - Band 2 Motion Mode
+Parameter info: index - 21, paramName - Band 2 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 22 - Band 2 Motion Shape
+Parameter info: index - 22, paramName - Band 2 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 23 - Band 2 Motion Rate
+Parameter info: index - 23, paramName - Band 2 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 24 - Band 2 Motion Sync
+Parameter info: index - 24, paramName - Band 2 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 25 - Band 2 Motion Division
+Parameter info: index - 25, paramName - Band 2 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 26 - Band 2 Motion Sweep
+Parameter info: index - 26, paramName - Band 2 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 27 - Band 2 Motion Swell
+Parameter info: index - 27, paramName - Band 2 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 28 - Band 3 On
+Parameter info: index - 28, paramName - Band 3 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 29 - Band 3 Type
+Parameter info: index - 29, paramName - Band 3 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 30 - Band 3 Frequency
+Parameter info: index - 30, paramName - Band 3 Frequency, defaultValue - 0.358299, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 31 - Band 3 Gain
+Parameter info: index - 31, paramName - Band 3 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 32 - Band 3 Q
+Parameter info: index - 32, paramName - Band 3 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 33 - Band 3 Slope
+Parameter info: index - 33, paramName - Band 3 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 34 - Band 3 Stereo Placement
+Parameter info: index - 34, paramName - Band 3 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 35 - Band 3 Motion Mode
+Parameter info: index - 35, paramName - Band 3 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 36 - Band 3 Motion Shape
+Parameter info: index - 36, paramName - Band 3 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 37 - Band 3 Motion Rate
+Parameter info: index - 37, paramName - Band 3 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 38 - Band 3 Motion Sync
+Parameter info: index - 38, paramName - Band 3 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 39 - Band 3 Motion Division
+Parameter info: index - 39, paramName - Band 3 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 40 - Band 3 Motion Sweep
+Parameter info: index - 40, paramName - Band 3 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 41 - Band 3 Motion Swell
+Parameter info: index - 41, paramName - Band 3 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 42 - Band 4 On
+Parameter info: index - 42, paramName - Band 4 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 43 - Band 4 Type
+Parameter info: index - 43, paramName - Band 4 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 44 - Band 4 Frequency
+Parameter info: index - 44, paramName - Band 4 Frequency, defaultValue - 0.424329, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 45 - Band 4 Gain
+Parameter info: index - 45, paramName - Band 4 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 46 - Band 4 Q
+Parameter info: index - 46, paramName - Band 4 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 47 - Band 4 Slope
+Parameter info: index - 47, paramName - Band 4 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 48 - Band 4 Stereo Placement
+Parameter info: index - 48, paramName - Band 4 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 49 - Band 4 Motion Mode
+Parameter info: index - 49, paramName - Band 4 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 50 - Band 4 Motion Shape
+Parameter info: index - 50, paramName - Band 4 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 51 - Band 4 Motion Rate
+Parameter info: index - 51, paramName - Band 4 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 52 - Band 4 Motion Sync
+Parameter info: index - 52, paramName - Band 4 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 53 - Band 4 Motion Division
+Parameter info: index - 53, paramName - Band 4 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 54 - Band 4 Motion Sweep
+Parameter info: index - 54, paramName - Band 4 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 55 - Band 4 Motion Swell
+Parameter info: index - 55, paramName - Band 4 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 56 - Band 5 On
+Parameter info: index - 56, paramName - Band 5 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 57 - Band 5 Type
+Parameter info: index - 57, paramName - Band 5 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 58 - Band 5 Frequency
+Parameter info: index - 58, paramName - Band 5 Frequency, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 59 - Band 5 Gain
+Parameter info: index - 59, paramName - Band 5 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 60 - Band 5 Q
+Parameter info: index - 60, paramName - Band 5 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 61 - Band 5 Slope
+Parameter info: index - 61, paramName - Band 5 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 62 - Band 5 Stereo Placement
+Parameter info: index - 62, paramName - Band 5 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 63 - Band 5 Motion Mode
+Parameter info: index - 63, paramName - Band 5 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 64 - Band 5 Motion Shape
+Parameter info: index - 64, paramName - Band 5 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 65 - Band 5 Motion Rate
+Parameter info: index - 65, paramName - Band 5 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 66 - Band 5 Motion Sync
+Parameter info: index - 66, paramName - Band 5 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 67 - Band 5 Motion Division
+Parameter info: index - 67, paramName - Band 5 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 68 - Band 5 Motion Sweep
+Parameter info: index - 68, paramName - Band 5 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 69 - Band 5 Motion Swell
+Parameter info: index - 69, paramName - Band 5 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 70 - Band 6 On
+Parameter info: index - 70, paramName - Band 6 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 71 - Band 6 Type
+Parameter info: index - 71, paramName - Band 6 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 72 - Band 6 Frequency
+Parameter info: index - 72, paramName - Band 6 Frequency, defaultValue - 0.587749, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 73 - Band 6 Gain
+Parameter info: index - 73, paramName - Band 6 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 74 - Band 6 Q
+Parameter info: index - 74, paramName - Band 6 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 75 - Band 6 Slope
+Parameter info: index - 75, paramName - Band 6 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 76 - Band 6 Stereo Placement
+Parameter info: index - 76, paramName - Band 6 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 77 - Band 6 Motion Mode
+Parameter info: index - 77, paramName - Band 6 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 78 - Band 6 Motion Shape
+Parameter info: index - 78, paramName - Band 6 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 79 - Band 6 Motion Rate
+Parameter info: index - 79, paramName - Band 6 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 80 - Band 6 Motion Sync
+Parameter info: index - 80, paramName - Band 6 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 81 - Band 6 Motion Division
+Parameter info: index - 81, paramName - Band 6 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 82 - Band 6 Motion Sweep
+Parameter info: index - 82, paramName - Band 6 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 83 - Band 6 Motion Swell
+Parameter info: index - 83, paramName - Band 6 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 84 - Band 7 On
+Parameter info: index - 84, paramName - Band 7 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 85 - Band 7 Type
+Parameter info: index - 85, paramName - Band 7 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 86 - Band 7 Frequency
+Parameter info: index - 86, paramName - Band 7 Frequency, defaultValue - 0.669112, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 87 - Band 7 Gain
+Parameter info: index - 87, paramName - Band 7 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 88 - Band 7 Q
+Parameter info: index - 88, paramName - Band 7 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 89 - Band 7 Slope
+Parameter info: index - 89, paramName - Band 7 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 90 - Band 7 Stereo Placement
+Parameter info: index - 90, paramName - Band 7 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 91 - Band 7 Motion Mode
+Parameter info: index - 91, paramName - Band 7 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 92 - Band 7 Motion Shape
+Parameter info: index - 92, paramName - Band 7 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 93 - Band 7 Motion Rate
+Parameter info: index - 93, paramName - Band 7 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 94 - Band 7 Motion Sync
+Parameter info: index - 94, paramName - Band 7 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 95 - Band 7 Motion Division
+Parameter info: index - 95, paramName - Band 7 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 96 - Band 7 Motion Sweep
+Parameter info: index - 96, paramName - Band 7 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 97 - Band 7 Motion Swell
+Parameter info: index - 97, paramName - Band 7 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 98 - Band 8 On
+Parameter info: index - 98, paramName - Band 8 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 99 - Band 8 Type
+Parameter info: index - 99, paramName - Band 8 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 100 - Band 8 Frequency
+Parameter info: index - 100, paramName - Band 8 Frequency, defaultValue - 0.72658, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 101 - Band 8 Gain
+Parameter info: index - 101, paramName - Band 8 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 102 - Band 8 Q
+Parameter info: index - 102, paramName - Band 8 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 103 - Band 8 Slope
+Parameter info: index - 103, paramName - Band 8 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 104 - Band 8 Stereo Placement
+Parameter info: index - 104, paramName - Band 8 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 105 - Band 8 Motion Mode
+Parameter info: index - 105, paramName - Band 8 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 106 - Band 8 Motion Shape
+Parameter info: index - 106, paramName - Band 8 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 107 - Band 8 Motion Rate
+Parameter info: index - 107, paramName - Band 8 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 108 - Band 8 Motion Sync
+Parameter info: index - 108, paramName - Band 8 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 109 - Band 8 Motion Division
+Parameter info: index - 109, paramName - Band 8 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 110 - Band 8 Motion Sweep
+Parameter info: index - 110, paramName - Band 8 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 111 - Band 8 Motion Swell
+Parameter info: index - 111, paramName - Band 8 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 112 - Band 9 On
+Parameter info: index - 112, paramName - Band 9 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 113 - Band 9 Type
+Parameter info: index - 113, paramName - Band 9 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 114 - Band 9 Frequency
+Parameter info: index - 114, paramName - Band 9 Frequency, defaultValue - 0.80977, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 115 - Band 9 Gain
+Parameter info: index - 115, paramName - Band 9 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 116 - Band 9 Q
+Parameter info: index - 116, paramName - Band 9 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 117 - Band 9 Slope
+Parameter info: index - 117, paramName - Band 9 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 118 - Band 9 Stereo Placement
+Parameter info: index - 118, paramName - Band 9 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 119 - Band 9 Motion Mode
+Parameter info: index - 119, paramName - Band 9 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 120 - Band 9 Motion Shape
+Parameter info: index - 120, paramName - Band 9 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 121 - Band 9 Motion Rate
+Parameter info: index - 121, paramName - Band 9 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 122 - Band 9 Motion Sync
+Parameter info: index - 122, paramName - Band 9 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 123 - Band 9 Motion Division
+Parameter info: index - 123, paramName - Band 9 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 124 - Band 9 Motion Sweep
+Parameter info: index - 124, paramName - Band 9 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 125 - Band 9 Motion Swell
+Parameter info: index - 125, paramName - Band 9 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 126 - Band 10 On
+Parameter info: index - 126, paramName - Band 10 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 127 - Band 10 Type
+Parameter info: index - 127, paramName - Band 10 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 128 - Band 10 Frequency
+Parameter info: index - 128, paramName - Band 10 Frequency, defaultValue - 0.889056, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 129 - Band 10 Gain
+Parameter info: index - 129, paramName - Band 10 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 130 - Band 10 Q
+Parameter info: index - 130, paramName - Band 10 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 131 - Band 10 Slope
+Parameter info: index - 131, paramName - Band 10 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 132 - Band 10 Stereo Placement
+Parameter info: index - 132, paramName - Band 10 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 133 - Band 10 Motion Mode
+Parameter info: index - 133, paramName - Band 10 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 134 - Band 10 Motion Shape
+Parameter info: index - 134, paramName - Band 10 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 135 - Band 10 Motion Rate
+Parameter info: index - 135, paramName - Band 10 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 136 - Band 10 Motion Sync
+Parameter info: index - 136, paramName - Band 10 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 137 - Band 10 Motion Division
+Parameter info: index - 137, paramName - Band 10 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 138 - Band 10 Motion Sweep
+Parameter info: index - 138, paramName - Band 10 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 139 - Band 10 Motion Swell
+Parameter info: index - 139, paramName - Band 10 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 140 - Band 11 On
+Parameter info: index - 140, paramName - Band 11 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 141 - Band 11 Type
+Parameter info: index - 141, paramName - Band 11 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 142 - Band 11 Frequency
+Parameter info: index - 142, paramName - Band 11 Frequency, defaultValue - 0.949937, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 143 - Band 11 Gain
+Parameter info: index - 143, paramName - Band 11 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 144 - Band 11 Q
+Parameter info: index - 144, paramName - Band 11 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 145 - Band 11 Slope
+Parameter info: index - 145, paramName - Band 11 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 146 - Band 11 Stereo Placement
+Parameter info: index - 146, paramName - Band 11 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 147 - Band 11 Motion Mode
+Parameter info: index - 147, paramName - Band 11 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 148 - Band 11 Motion Shape
+Parameter info: index - 148, paramName - Band 11 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 149 - Band 11 Motion Rate
+Parameter info: index - 149, paramName - Band 11 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 150 - Band 11 Motion Sync
+Parameter info: index - 150, paramName - Band 11 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 151 - Band 11 Motion Division
+Parameter info: index - 151, paramName - Band 11 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 152 - Band 11 Motion Sweep
+Parameter info: index - 152, paramName - Band 11 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 153 - Band 11 Motion Swell
+Parameter info: index - 153, paramName - Band 11 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 154 - Band 12 On
+Parameter info: index - 154, paramName - Band 12 On, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 155 - Band 12 Type
+Parameter info: index - 155, paramName - Band 12 Type, defaultValue - 0, label - , numSteps - 7, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 156 - Band 12 Frequency
+Parameter info: index - 156, paramName - Band 12 Frequency, defaultValue - 0.374875, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 157 - Band 12 Gain
+Parameter info: index - 157, paramName - Band 12 Gain, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 158 - Band 12 Q
+Parameter info: index - 158, paramName - Band 12 Q, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 159 - Band 12 Slope
+Parameter info: index - 159, paramName - Band 12 Slope, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 160 - Band 12 Stereo Placement
+Parameter info: index - 160, paramName - Band 12 Stereo Placement, defaultValue - 0, label - , numSteps - 5, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 161 - Band 12 Motion Mode
+Parameter info: index - 161, paramName - Band 12 Motion Mode, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 162 - Band 12 Motion Shape
+Parameter info: index - 162, paramName - Band 12 Motion Shape, defaultValue - 0, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 163 - Band 12 Motion Rate
+Parameter info: index - 163, paramName - Band 12 Motion Rate, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 164 - Band 12 Motion Sync
+Parameter info: index - 164, paramName - Band 12 Motion Sync, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 165 - Band 12 Motion Division
+Parameter info: index - 165, paramName - Band 12 Motion Division, defaultValue - 0.571429, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 166 - Band 12 Motion Sweep
+Parameter info: index - 166, paramName - Band 12 Motion Sweep, defaultValue - 0.333333, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 167 - Band 12 Motion Swell
+Parameter info: index - 167, paramName - Band 12 Motion Swell, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 168 - Output
+Parameter info: index - 168, paramName - Output, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 169 - Bypass
+Parameter info: index - 169, paramName - Bypass, defaultValue - 0, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 170 - Motion Master
+Parameter info: index - 170, paramName - Motion Master, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 171 - Analyzer
+Parameter info: index - 171, paramName - Analyzer, defaultValue - 1, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 172 - Analyzer Speed
+Parameter info: index - 172, paramName - Analyzer Speed, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 173 - Analyzer Tilt
+Parameter info: index - 173, paramName - Analyzer Tilt, defaultValue - 0, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 174 - Analyzer Range
+Parameter info: index - 174, paramName - Analyzer Range, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 175 - Analyzer Detail
+Parameter info: index - 175, paramName - Analyzer Detail, defaultValue - 0.5, label - , numSteps - 3, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 176 - Display Range
+Parameter info: index - 176, paramName - Display Range, defaultValue - 0.333333, label - , numSteps - 4, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Testing parameter: 177 - Motion Trails
+Parameter info: index - 177, paramName - Motion Trails, defaultValue - 1, label - , numSteps - 2, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings -
+Testing accessors
+
+Time taken to run test: 47 ms
+Completed tests in pluginval / Automatable Parameters
+-----------------------------------------------------------------
+Starting tests in: pluginval / auval...
+
+Time taken to run test: 0
+Completed tests in pluginval / auval
+-----------------------------------------------------------------
+Starting tests in: pluginval / vst3 validator...
+INFO: Skipping vst3 validator as validator path hasn't been set
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / vst3 validator
+-----------------------------------------------------------------
+Starting tests in: pluginval / Basic bus...
+Completed tests in pluginval / Basic bus
+-----------------------------------------------------------------
+Starting tests in: pluginval / Listing available buses...
+Inputs:
+	Named layouts: Mono, Stereo
+	Discrete layouts: Discrete #1
+Outputs:
+	Named layouts: Mono, Stereo
+	Discrete layouts: Discrete #1
+Main bus num input channels: 2
+Main bus num output channels: 2
+Completed tests in pluginval / Listing available buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Enabling all buses...
+Completed tests in pluginval / Enabling all buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Disabling non-main busses...
+Completed tests in pluginval / Disabling non-main busses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Restoring default layout...
+Main bus num input channels: 2
+Main bus num output channels: 2
+
+Time taken to run test: 8 ms
+
+Time taken to run all tests: 613 ms
+Completed tests in pluginval / Restoring default layout
+SUCCESS
