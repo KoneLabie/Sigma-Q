@@ -1,11 +1,6 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
-namespace
-{
-    const double kBeatsPerCycle[8] = { 0.25, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0 };
-}
-
 //==============================================================================
 juce::AudioProcessorValueTreeState::ParameterLayout SigmaQProcessor::createLayout()
 {
@@ -82,9 +77,6 @@ SigmaQProcessor::SigmaQProcessor()
         bp[(size_t) b] = { get ("on"), get ("type"), get ("freq"), get ("gain"), get ("q"), get ("slope"),
                            get ("place"), get ("mode"), get ("shape"), get ("rate"), get ("sync"),
                            get ("div"), get ("dfreq"), get ("dgain") };
-        motOct[(size_t) b].store (0.f);
-        motDb[(size_t) b].store (0.f);
-        motCycles[(size_t) b].store (0.0);
     }
     pOut      = apvts.getRawParameterValue ("out");
     pBypass   = apvts.getRawParameterValue ("bypass");
@@ -96,8 +88,6 @@ SigmaQProcessor::SigmaQProcessor()
     pTrails   = apvts.getRawParameterValue ("trails");
     pARange   = apvts.getRawParameterValue ("arange");
     pDetail   = apvts.getRawParameterValue ("detail");
-    for (auto& v : preBuf)  v.store (0.f, std::memory_order_relaxed);
-    for (auto& v : postBuf) v.store (0.f, std::memory_order_relaxed);
 }
 
 bool SigmaQProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
@@ -111,16 +101,13 @@ bool SigmaQProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 void SigmaQProcessor::prepareToPlay (double sampleRate, int)
 {
     sr = sampleRate;
-    outSm.reset (sr, 0.03);
-    outSm.setCurrentAndTargetValue (juce::Decibels::decibelsToGain (pOut->load()));
-    bypassSm.reset (sr, 0.015);
-    bypassSm.setCurrentAndTargetValue (pBypass->load() > 0.5f ? 0.0f : 1.0f);
-    for (auto& b : bands) b = BandDsp();
-    for (auto& v : preBuf)  v.store (0.f, std::memory_order_relaxed);
-    for (auto& v : postBuf) v.store (0.f, std::memory_order_relaxed);
+    engine.prepare (sampleRate);
+    ring.clear();
 }
 
 //==============================================================================
+// Audio callback: no locks, no allocation. Parameters are copied from atomics into the
+// pre-allocated snapshot, then the JUCE-free engine does the work in <= kSub sample chunks.
 void SigmaQProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer&)
 {
     juce::ScopedNoDenormals noDenormals;
@@ -142,182 +129,46 @@ void SigmaQProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Midi
             if (auto p = pos->getPpqPosition()) ppq = *p;
         }
 
-    // never trust host timing values blindly
-    if (! (bpm >= 20.0 && bpm <= 999.0)) bpm = 120.0;
-    if (! std::isfinite (ppq)) ppq = -1.0;
-
-    const bool bypass  = pBypass->load() > 0.5f;
-    const bool analyze = pAnalyzer->load() > 0.5f;
-    outSm.setTargetValue (juce::Decibels::decibelsToGain (pOut->load()));
-    bypassSm.setTargetValue (bypass ? 0.0f : 1.0f);
-    int wp = specPos.load (std::memory_order_relaxed);
-
-    for (int start = 0; start < total; start += kSub)
+    for (int b = 0; b < kNumBands; ++b)
     {
-        const int n = juce::jmin (kSub, total - start);
+        const auto& P = bp[(size_t) b];
+        auto& S = snapshot[(size_t) b];
+        S.on    = P.on->load() > 0.5f;
+        S.sync  = P.sync->load() > 0.5f;
+        S.type  = (int) (P.type->load()  + 0.5f);
+        S.slope = (int) (P.slope->load() + 0.5f);
+        S.place = (int) (P.place->load() + 0.5f);
+        S.mode  = (int) (P.mode->load()  + 0.5f);
+        S.shape = (int) (P.shape->load() + 0.5f);
+        S.div   = (int) (P.div->load()   + 0.5f);
+        S.freq = P.freq->load();   S.gain = P.gain->load();   S.q = P.q->load();
+        S.rate = P.rate->load();   S.dfreq = P.dfreq->load(); S.dgain = P.dgain->load();
+    }
+
+    sigmaq::Globals g;
+    g.bypass   = pBypass->load() > 0.5f;
+    g.motionOn = pMotion->load() > 0.5f;
+    g.outDb    = pOut->load();
+    const bool analyze = pAnalyzer->load() > 0.5f;
+
+    for (int start = 0; start < total; start += sigmaq::kSub)
+    {
+        const int n = juce::jmin (sigmaq::kSub, total - start);
         float* ch[2] = { nullptr, nullptr };
         for (int c = 0; c < nCh; ++c) ch[c] = buffer.getWritePointer (c) + start;
 
-        float pre[kSub];
-        float dry[2][kSub] = {};
+        float pre[sigmaq::kSub];
         for (int i = 0; i < n; ++i)
-        {
             pre[i] = nCh == 2 ? 0.5f * (ch[0][i] + ch[1][i]) : ch[0][i];
-            for (int c = 0; c < nCh; ++c) dry[c][i] = ch[c][i];
-        }
 
-        // The filters ALWAYS run, even while bypassed, so their internal state and the motion
-        // phase never go stale. Bypass is a short crossfade, so there are no clicks or leftover tails.
         const double ppqHere = (playing && ppq >= 0.0) ? ppq + (double) start * bpm / (60.0 * sr) : -1.0;
-        processSub (ch, nCh, n, ppqHere, bpm);
-
-        for (int i = 0; i < n; ++i)
-        {
-            const float m = bypassSm.getNextValue();
-            const float g = outSm.getNextValue();
-            for (int c = 0; c < nCh; ++c)
-                ch[c][i] = dry[c][i] * (1.0f - m) + ch[c][i] * g * m;
-        }
+        engine.processChunk (ch, nCh, n, snapshot.data(), g, ppqHere, bpm);
 
         if (analyze)
             for (int i = 0; i < n; ++i)
-            {
-                const float post = nCh == 2 ? 0.5f * (ch[0][i] + ch[1][i]) : ch[0][i];
-                preBuf[(size_t) wp].store  (pre[i], std::memory_order_relaxed);
-                postBuf[(size_t) wp].store (post,   std::memory_order_relaxed);
-                wp = (wp + 1) & (fftSize - 1);
-            }
+                ring.push (pre[i], nCh == 2 ? 0.5f * (ch[0][i] + ch[1][i]) : ch[0][i]);
     }
-    if (analyze) specPos.store (wp, std::memory_order_release);
-}
-
-void SigmaQProcessor::processSub (float** ch, int nCh, int n, double ppq, double bpm)
-{
-    const bool motionOn = pMotion->load() > 0.5f;
-    const double dt = (double) n / sr;
-    const double smoothA = 1.0 - std::exp (-dt / 0.012);
-
-    for (int b = 0; b < kNumBands; ++b)
-    {
-        auto& P = bp[(size_t) b];
-        auto& D = bands[(size_t) b];
-
-        if (P.on->load() < 0.5f)
-        {
-            D.active = false;
-            motOct[(size_t) b].store (0.f);
-            motDb[(size_t) b].store (0.f);
-            motCycles[(size_t) b].store (0.0);
-            continue;
-        }
-
-        const int type  = (int) P.type->load();
-        const int slope = (int) P.slope->load();
-        const double fl = std::log2 ((double) P.freq->load());
-
-        if (! D.active)
-        {
-            D.active = true;
-            D.sFreqLog = fl;  D.sGain = P.gain->load();  D.sQ = P.q->load();
-            D.lastF = -1;
-            D.sOct = D.sDb = 0.0;
-            for (auto& s : D.st) for (auto& x : s) x = dsp_eq::SvfState();
-        }
-        else
-        {
-            D.sFreqLog += smoothA * (fl - D.sFreqLog);
-            D.sGain    += smoothA * ((double) P.gain->load() - D.sGain);
-            D.sQ       += smoothA * ((double) P.q->load() - D.sQ);
-        }
-
-        // ---- motion ----
-        double octOff = 0.0, dbOff = 0.0;
-        const int mode = (int) P.mode->load();
-        if (motionOn && mode > 0)
-        {
-            if (P.sync->load() > 0.5f)
-            {
-                const double bpc = kBeatsPerCycle[juce::jlimit (0, 7, (int) P.div->load())];
-                if (ppq >= 0.0) D.cycles = ppq / bpc;
-                else            D.cycles += (bpm / 60.0) / bpc * dt;
-            }
-            else
-                D.cycles += (double) P.rate->load() * dt;
-
-            const double dF = P.dfreq->load(), dG = P.dgain->load();
-            if (mode == 1)
-            {
-                const double w = dsp_eq::lfoShape ((int) P.shape->load(), D.cycles, b);
-                octOff = dF * w;
-                dbOff  = dG * w;
-            }
-            else
-            {
-                const double ph = 2.0 * dsp_eq::kPi * (D.cycles - std::floor (D.cycles));
-                octOff = dF * std::cos (ph);
-                dbOff  = dG * std::sin (ph);
-            }
-        }
-        if (! std::isfinite (octOff) || ! std::isfinite (dbOff) || ! std::isfinite (D.cycles))
-        {
-            octOff = dbOff = 0.0;
-            D.cycles = 0.0;
-        }
-        const double mA = 1.0 - std::exp (-dt / 0.004);        // ~4 ms slew: softens saw wrap and hard edges
-        D.sOct += mA * (octOff - D.sOct);
-        D.sDb  += mA * (dbOff  - D.sDb);
-        octOff = D.sOct;
-        dbOff  = D.sDb;
-        motOct[(size_t) b].store ((float) octOff);
-        motDb[(size_t) b].store ((float) dbOff);
-        motCycles[(size_t) b].store (motionOn && mode > 0 ? D.cycles : 0.0);
-
-        const double f = juce::jlimit (20.0, 20000.0, std::pow (2.0, D.sFreqLog + octOff));
-        const double g = juce::jlimit (-30.0, 30.0, D.sGain + dbOff);
-
-        if (std::abs (f - D.lastF) > f * 1.0e-6 || std::abs (g - D.lastG) > 1.0e-5
-            || std::abs (D.sQ - D.lastQ) > 1.0e-6 || type != D.lastType || slope != D.lastSlope)
-        {
-            D.set = dsp_eq::makeBand (type, sr, f, D.sQ, g, slope);
-            D.lastF = f; D.lastG = g; D.lastQ = D.sQ; D.lastType = type; D.lastSlope = slope;
-        }
-        D.place = (int) P.place->load();
-    }
-
-    // ---- filtering ----
-    auto run = [] (BandDsp& D, int stIdx, float* x, int count)
-    {
-        for (int i = 0; i < count; ++i)
-        {
-            double v = x[i];
-            for (int s = 0; s < D.set.n; ++s) v = D.st[stIdx][s].process (D.set.c[s], v);
-            if (! (std::abs (v) < 1.0e4)) { for (auto& st : D.st[stIdx]) st = dsp_eq::SvfState(); v = 0.0; }
-            x[i] = (float) v;
-        }
-    };
-
-    for (int b = 0; b < kNumBands; ++b)
-    {
-        auto& D = bands[(size_t) b];
-        if (! D.active) continue;
-
-        if (nCh == 1) { if (D.place != 2 && D.place != 4) run (D, 0, ch[0], n); continue; }
-
-        switch (D.place)
-        {
-            case 0:  run (D, 0, ch[0], n); run (D, 1, ch[1], n); break;
-            case 1:  run (D, 0, ch[0], n); break;
-            case 2:  run (D, 1, ch[1], n); break;
-            default:
-            {
-                float m[kSub], s[kSub];
-                for (int i = 0; i < n; ++i) { m[i] = 0.5f * (ch[0][i] + ch[1][i]); s[i] = 0.5f * (ch[0][i] - ch[1][i]); }
-                if (D.place == 3) run (D, 0, m, n); else run (D, 1, s, n);
-                for (int i = 0; i < n; ++i) { ch[0][i] = m[i] + s[i]; ch[1][i] = m[i] - s[i]; }
-                break;
-            }
-        }
-    }
+    if (analyze) ring.publish();
 }
 
 //==============================================================================

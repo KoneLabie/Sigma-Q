@@ -1,9 +1,8 @@
 #pragma once
 #include <JuceHeader.h>
 #include <array>
-#include "Dsp.h"
-
-constexpr int kNumBands = 12;
+#include "Engine.h"
+#include "SpectrumRing.h"
 
 namespace Names
 {
@@ -25,6 +24,9 @@ inline juce::String pid (int band, const char* name) { return "b" + juce::String
 
 class SigmaQProcessor : public juce::AudioProcessor
 {
+private:
+    sigmaq::Engine engine;   // declared first: the public references below bind to it
+
 public:
     SigmaQProcessor();
     ~SigmaQProcessor() override = default;
@@ -63,37 +65,20 @@ public:
 
     std::atomic<float> *pOut, *pBypass, *pMotion, *pAnalyzer, *pSmooth, *pTilt, *pRange, *pTrails, *pARange, *pDetail;
 
-    // Live motion offsets (octaves / dB) so the UI can draw the moving dots
-    std::array<std::atomic<float>, kNumBands> motOct, motDb;
-    std::array<std::atomic<double>, kNumBands> motCycles;   // for the motion preview
+    // Live motion read-outs (octaves / dB / cycles) so the UI can draw the moving dots
+    std::array<std::atomic<float>, kNumBands>&  motOct    = engine.motOct;
+    std::array<std::atomic<float>, kNumBands>&  motDb     = engine.motDb;
+    std::array<std::atomic<double>, kNumBands>& motCycles = engine.motCycles;
 
-    // Spectrum analyser ring buffers (visual only)
-    static constexpr int fftOrder = 14;
-    static constexpr int fftSize  = 1 << fftOrder;
-    std::array<std::atomic<float>, fftSize> preBuf, postBuf;   // relaxed atomics: safe to read from the UI thread
-    std::atomic<int> specPos { 0 };
+    // Spectrum analyser ring: lock-free, single writer (audio) / single reader (UI), visual only
+    static constexpr int fftOrder = SpectrumRing::order;
+    static constexpr int fftSize  = SpectrumRing::size;
+    SpectrumRing ring;
 
 private:
-    static constexpr int kSub = 32;   // coefficient update interval (samples)
-
     static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
-    void processSub (float** ch, int nCh, int n, double ppq, double bpm);
 
-    struct BandDsp
-    {
-        bool active = false;
-        int place = 0;
-        double sFreqLog = 0, sGain = 0, sQ = 1;
-        double cycles = 0;
-        double sOct = 0, sDb = 0;          // motion offsets, slew-limited
-        double lastF = -1, lastG = 1e9, lastQ = -1;
-        int lastType = -1, lastSlope = -1;
-        dsp_eq::StageSet set;
-        dsp_eq::SvfState st[2][4];
-    };
-    std::array<BandDsp, kNumBands> bands;
-
-    juce::SmoothedValue<float> outSm, bypassSm;
+    std::array<sigmaq::BandSettings, kNumBands> snapshot;   // pre-allocated; filled once per block
     double sr = 44100.0;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SigmaQProcessor)

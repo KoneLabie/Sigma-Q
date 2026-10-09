@@ -14,6 +14,10 @@ constexpr double kPi = 3.14159265358979323846;
 enum BandType { Bell = 0, LowShelf, HighShelf, LowCut, HighCut, Notch, BandPass };
 enum SvfKind  { kBell, kLowShelf, kHighShelf, kLowPass, kHighPass, kNotch, kBandPass };
 
+// Shelf "Q" above this adds a huge resonant peak (+25 dB over the set gain at Q 18), so the effective
+// shelf Q is capped. Stored parameter values are untouched, so presets load exactly as before.
+constexpr double kShelfQMax = 1.5;
+
 inline bool gainActive (int type) { return type == Bell || type == LowShelf || type == HighShelf; }
 inline bool isCut (int type)      { return type == LowCut || type == HighCut; }
 
@@ -57,8 +61,8 @@ inline StageSet makeBand (int type, double fs, double f, double q, double gainDb
     switch (type)
     {
         case Bell:      s.c[0] = makeSvf (kBell, fs, f, q, gainDb);      s.n = 1; break;
-        case LowShelf:  s.c[0] = makeSvf (kLowShelf, fs, f, q, gainDb);  s.n = 1; break;
-        case HighShelf: s.c[0] = makeSvf (kHighShelf, fs, f, q, gainDb); s.n = 1; break;
+        case LowShelf:  s.c[0] = makeSvf (kLowShelf, fs, f, std::min (q, kShelfQMax), gainDb);  s.n = 1; break;
+        case HighShelf: s.c[0] = makeSvf (kHighShelf, fs, f, std::min (q, kShelfQMax), gainDb); s.n = 1; break;
         case Notch:     s.c[0] = makeSvf (kNotch, fs, f, q, 0);          s.n = 1; break;
         case BandPass:  s.c[0] = makeSvf (kBandPass, fs, f, q, 0);       s.n = 1; break;
         case LowCut:

@@ -389,8 +389,8 @@ private:
         static const float tilts[3]   = { 0.0f, 3.0f, 4.5f };
         const float a = smoothA[juce::jlimit (0, 2, (int) proc.pSmooth->load())];
         const float tilt = tilts[juce::jlimit (0, 2, (int) proc.pTilt->load())];
-        computeSpectrum (proc.postBuf, postDb, a, tilt);
-        if (mode == 2) computeSpectrum (proc.preBuf, preDb, a, tilt);
+        computeSpectrum (proc.ring.post, postDb, a, tilt);
+        if (mode == 2) computeSpectrum (proc.ring.pre, preDb, a, tilt);
     }
 
     void computeSpectrum (const std::array<std::atomic<float>, SigmaQProcessor::fftSize>& src,
@@ -398,7 +398,7 @@ private:
     {
         constexpr int N = SigmaQProcessor::fftSize;
         const double sr = sampleRate();
-        const int wp = proc.specPos.load (std::memory_order_acquire);
+        const int wp = proc.ring.readPos();
         for (int i = 0; i < N; ++i) fftData[(size_t) i] = src[(size_t) ((wp + i) & (N - 1))].load (std::memory_order_relaxed);
         std::fill (fftData.begin() + N, fftData.end(), 0.0f);
         window.multiplyWithWindowingTable (fftData.data(), (size_t) N);
