@@ -1,5 +1,6 @@
 # Sigma Q v0.1: EQ with animated dots (VST3)
 <img width="800" height="233" alt="SQ" src="https://github.com/user-attachments/assets/59719dad-cb42-4bb8-93b7-1b5f3eac8203" />
+
 ## Using it
 - **Double-click** the canvas to add a band (up to 12). **Drag** a dot to change frequency and gain.
 - Every band has its **own colour**. Its shape is drawn in that colour and moves live as the dot moves.
