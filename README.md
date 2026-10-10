@@ -8,10 +8,15 @@
   - **Motion** tab: Off / LFO / Orbit, pattern, tempo Sync or free Rate, Sweep and Swell. A live waveform preview shows exactly what the dot is doing right now.
 - **Scroll** over a dot for width (Q). **Right-click** for shape / delete. **Delete** key removes the selected band.
 - Top bar: Output, Bypass, Motion master switch, Advanced drawer (analyzer, display range, trails, reset).
+
 # Band settings
+
 <img width="342" height="264" alt="image" src="https://github.com/user-attachments/assets/132f6915-222d-4bfb-ac3b-4010a6d2eda1" /><img width="350" height="273" alt="image" src="https://github.com/user-attachments/assets/b5e3be11-656e-47bc-b677-f1d05769fdb3" />
+
 # Advanced Settings
+
 <img width="277" height="396" alt="image" src="https://github.com/user-attachments/assets/cc7556d6-0014-4902-8683-fbfcc7d72b5f" />
+
 ## Files
 - `Dsp.h`: filters + LFO waveforms, shared by audio and UI.
 - `PluginProcessor.*`: parameters, motion engine, filtering.
